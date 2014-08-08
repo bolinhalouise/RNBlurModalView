@@ -36,7 +36,7 @@ CGFloat const kRNBlurDefaultDelay = 0.02f;
 /*
     You can also change this constant to make the blur more "blurry". I recommend the tasteful level of 0.2 and no higher. However, you are free to change this from 0.0 to 1.0.
  */
-CGFloat const kRNDefaultBlurScale = 0.2f;
+CGFloat const kRNDefaultBlurScale = 0.5f;
 
 CGFloat const kRNBlurDefaultDuration = 0.2f;
 CGFloat const kRNBlurViewMaxAlpha = 1.f;
