@@ -31,7 +31,7 @@
     This bit is important! In order to prevent capturing selected states of UIResponders I've implemented a delay. Please feel free to set this delay to *whatever* you deem apprpriate.
     I've defaulted it to 0.125 seconds. You can do shorter/longer as you see fit. 
  */
-CGFloat const kRNBlurDefaultDelay = 0.125f;
+CGFloat const kRNBlurDefaultDelay = 0.02f;
 
 /*
     You can also change this constant to make the blur more "blurry". I recommend the tasteful level of 0.2 and no higher. However, you are free to change this from 0.0 to 1.0.
@@ -147,7 +147,7 @@ typedef void (^RNBlurCompletion)(void);
         [_dismissButton addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
         
         self.alpha = 0.f;
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.7f];
 //        self.backgroundColor = [UIColor redColor];
 //        self.layer.borderWidth = 2.f;
 //        self.layer.borderColor = [UIColor blackColor].CGColor;
@@ -697,7 +697,7 @@ typedef void (^RNBlurCompletion)(void);
     //clean up
     CGContextRelease(ctx);
     CGColorSpaceRelease(colorSpace);
-    free(pixelBuffer2)
+    free(pixelBuffer2);
     free(pixelBuffer);
     CFRelease(inBitmapData);
     
