@@ -329,11 +329,11 @@ typedef void (^RNBlurCompletion)(void);
             [_parentView insertSubview:_blurView belowSubview:self];
         }
         
-        self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.4, 0.4);
+//        self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.4, 0.4);
         [UIView animateWithDuration:self.animationDuration animations:^{
             _blurView.alpha = 1.f;
             self.alpha = 1.f;
-            self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.f, 1.f);
+//            self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.f, 1.f);
         } completion:^(BOOL finished) {
             if (finished) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:kRNBlurDidShowNotification object:nil];
